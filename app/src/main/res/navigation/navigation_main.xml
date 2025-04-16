@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/adsFragment">
+
+    <fragment
+        android:id="@+id/adsFragment"
+        android:name="com.example.sellauto.fragments.AdsFragment"
+        android:label="@string/menu_ads"
+        tools:layout="@layout/ads_fragment" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.sellauto.fragments.ProfileFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/profile_fragment" />
+
+    <fragment
+        android:id="@+id/adDetailsFragment"
+        android:name="com.example.sellauto.fragments.AdDetailsFragment"
+        android:label="@string/ad_description"
+        tools:layout="@layout/ad_details_fragment">
+        <argument
+            android:name="ad_id"
+            app:argType="long" />
+    </fragment>
+
+</navigation>
