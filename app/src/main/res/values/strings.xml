@@ -12,15 +12,24 @@
     <string name="menu_profile">Профиль</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="photo">Photo</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="ad_description">Данные об объявлении</string>
-    <string name="ad_photo">ad photo</string>
+    <string name="photo">Фото</string>
+    <string name="ad_description">Данные объявления</string>
+    <string name="ad_photo">Фото объявления</string>
     <string name="history_price">История цен</string>
-    <string name="price_not_edit">Цена не изменялась</string>
+    <string name="price_not_edit">Цена еще не менялась</string>
+    <string name="title_activity_login">Войти</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Пароль</string>
+    <string name="action_sign_in_short">Вход</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="hello_user_profile">Добро пожаловать</string>
+    <string name="user_first_name">Имя</string>
+    <string name="user_last_name">Фамилия</string>
+    <string name="user_email">Email</string>
+    <string name="user_phone_number">Номер телефона</string>
+    <string name="user_rating">Рейтинг</string>
+    <string name="logout">Выйти</string>
+    <string name="menu_my_ads">Мои объявления</string>
+    <string name="delete">Удалить</string>
 
 </resources>

@@ -1,6 +1,5 @@
 package com.example.sellauto.fragments
 
-import android.app.Notification
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.sellauto.clients.sellauto.SellAutoClient
 import com.example.sellauto.databinding.AdsFragmentBinding
 import com.example.sellauto.holders.AdAdapter
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -39,20 +37,26 @@ class AdsFragment : Fragment() {
         lifecycleScope.launch {
             try {
                 val ads = withContext(Dispatchers.IO) {
-                    val sellAutoClient = SellAutoClient()
+                    val sellAutoClient = SellAutoClient(view.context)
                     sellAutoClient.getAds()
+                }
+
+                if (ads.isEmpty()) {
+                    binding.errorMessage.text = "Здесь пока-что пусто ☺️"
+                    binding.errorMessage.visibility = View.VISIBLE
+                    binding.adsList.visibility = View.GONE
+                    return@launch
                 }
 
                 val recyclerView: RecyclerView = binding.adsList
                 recyclerView.layoutManager = LinearLayoutManager(requireContext())
                 adAdapter = AdAdapter(requireContext(), ads)
                 recyclerView.adapter = adAdapter
-
-                binding.adsList.visibility = View.VISIBLE
             } catch (e: Exception) {
                 e.printStackTrace()
                 binding.errorMessage.text = "Ошибка загрузки данных"
                 binding.errorMessage.visibility = View.VISIBLE
+                binding.adsList.visibility = View.GONE
             }
         }
 

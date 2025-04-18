@@ -50,6 +50,7 @@ dependencies {
     implementation (libs.logging.interceptor)
 
     implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.annotation)
     ksp(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
 

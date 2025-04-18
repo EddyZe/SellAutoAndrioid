@@ -9,7 +9,14 @@
         android:id="@+id/adsFragment"
         android:name="com.example.sellauto.fragments.AdsFragment"
         android:label="@string/menu_ads"
+        tools:layout="@layout/ads_fragment"/>
+
+    <fragment
+        android:id="@+id/myAdsFragment"
+        android:name="com.example.sellauto.fragments.MyAdsFragment"
+        android:label="@string/menu_my_ads"
         tools:layout="@layout/ads_fragment" />
+
 
     <fragment
         android:id="@+id/profileFragment"
@@ -26,5 +33,11 @@
             android:name="ad_id"
             app:argType="long" />
     </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.sellauto.fragments.LoginFragment"
+        android:label="Авторизация"
+        tools:layout="@layout/login_fragment" />
 
 </navigation>

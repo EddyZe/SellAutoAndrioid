@@ -7,7 +7,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/adsList"
         android:layout_width="match_parent"
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_height="match_parent"
         android:contentDescription="@string/menu_ads" />
 

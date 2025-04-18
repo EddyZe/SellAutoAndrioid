@@ -1,8 +1,6 @@
 package com.example.sellauto.holders
 
 import android.content.Context
-import android.content.Intent
-import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
@@ -13,7 +11,6 @@ import com.example.sellauto.R
 import com.example.sellauto.clients.sellauto.SellAutoClient
 import com.example.sellauto.clients.sellauto.payloads.ads.AdDetailsPayload
 import com.example.sellauto.clients.sellauto.payloads.ads.CarDetailsDto
-import com.example.sellauto.fragments.AdDetailsFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -41,7 +38,7 @@ class AdAdapter(private val context: Context, private val adList: List<AdDetails
 
         holder.itemView.post {
             CoroutineScope(Dispatchers.IO).launch {
-                val response = SellAutoClient().getPhoto(firstPhotoId)
+                val response = SellAutoClient(context).getPhoto(firstPhotoId)
 
                 if (response.isSuccessful) {
                     val inputStream = response.body()?.byteStream()
